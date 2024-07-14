@@ -77,6 +77,16 @@ from MoNuSAC Testing Data and Annotations.<br>
 
 This script generates 512x512 resized JPEG image and colorized mask files by using some offline augmentation methods in the script 
 from the training dataset, and non-resized image and colorized mask files from the testing dataset.
+<pre>
+./PreAugmented-MoNuSAC-master
+├─images
+└─masks
+</pre>
+<pre>
+./MoNuSAC-mini-test
+├─images
+└─masks
+</pre>
 
 We used the following BGR colors for the 4 categories annotations to create colorized masks.  
 
@@ -101,7 +111,20 @@ Please run the following command for Python script <a href="./split_master.py">s
 >python split_master.py
 </pre>
 <hr>
-
+This command generates PreAugmented-MoNuSAC-ImageMask-Dataset-V1 dataset.<br>
+<pre>
+./ PreAugmented-MoNuSAC-ImageMask-Dataset-V1
+├─test
+│  ├─images
+│  └─masks
+├─train
+│  ├─images
+│  └─masks
+└─valid
+    ├─images
+    └─masks
+</pre>
+<hr>
 <b>Train images sample</b><br>
 <img src="./asset/train_images_sample.png" width="1024" height="auto"><br>
 <br>
