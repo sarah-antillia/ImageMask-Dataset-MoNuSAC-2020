@@ -41,7 +41,7 @@ Training and Testing dataset contains many svs and tif image files, and xml annt
 │  ├─TCGA-5P-A9K0-01Z-00-DX1_2.svs
 │  ├─TCGA-5P-A9K0-01Z-00-DX1_2.tif
 │  └─TCGA-5P-A9K0-01Z-00-DX1_2.xml
-├─TCGA-5P-A9K0-01Z-00-DX2
+├─TCGA-55-1594-01Z-00-DX1
 
 ...
 
@@ -49,18 +49,16 @@ Training and Testing dataset contains many svs and tif image files, and xml annt
 
 <pre>
 ./MoNuSAC Testing Data and Annotations
-├─TCGA-5P-A9K0-01Z-00-DX1
-│  ├─TCGA-5P-A9K0-01Z-00-DX1_1.svs
-│  ├─TCGA-5P-A9K0-01Z-00-DX1_1.tif
-│  ├─TCGA-5P-A9K0-01Z-00-DX1_1.xml
-│  ├─TCGA-5P-A9K0-01Z-00-DX1_2.svs
-│  ├─TCGA-5P-A9K0-01Z-00-DX1_2.tif
-│  └─TCGA-5P-A9K0-01Z-00-DX1_2.xml
-├─TCGA-5P-A9K0-01Z-00-DX2
+├─TCGA-2Z-A9JG-01Z-00-DX1
+│  ├─TCGA-2Z-A9JG-01Z-00-DX1_1.svs
+│  ├─TCGA-2Z-A9JG-01Z-00-DX1_1.tif
+│  ├─TCGA-2Z-A9JG-01Z-00-DX1_1.xml
+│  ├─TCGA-2Z-A9JG-01Z-00-DX1_2.svs
+│  ├─TCGA-2Z-A9JG-01Z-00-DX1_2.tif
+│  └─TCGA-2Z-A9JG-01Z-00-DX1_2.xml
+├─TCGA-2Z-A9JN-01Z-00-DX1
 
 ...
-
-
 
 </pre>
 
