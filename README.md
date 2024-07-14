@@ -93,12 +93,11 @@ colormap = {'Macrophage':(255, 0, 0),
             'Epithelial':(0, 255, 0), 
             'Neutrophil':(0, 0, 255), 
             'Lymphocyte':(0, 255, 255)}
-
 </pre>
-<b>Attribute name in annotation<br>
+<b>Attribute name in annotation</b><br>
 <img src = "./asset/json_annotation_category.png" width = "640" height="auto"><br>
 <br>
-<b>Vertex in annotation<br>
+<b>Vertex in annotation</b><br>
 <img src = "./asset/json_annotation_vertex.png" width = "640" height="auto"><br>
 <br>
 <br>
