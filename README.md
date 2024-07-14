@@ -24,7 +24,7 @@ to enhance the contrast of tissue sections for tumor assessment (grading, stagin
 The challenge data is released under the creative commons license (CC BY-NC-SA 4.0).
 <br>
 
-<h3>2. Download Traing and Testing dataset</h3>
+<h3>2. Download Training and Testing dataset</h3>
 If you would like to create your own dataset, please download Trainign ad Test dataset from the following link.<br>
 <a href="https://drive.google.com/file/d/1lxMZaAPSpEHLSxGA9KKMt_r-4S8dwLhq/view">MoNuSAC_images_and_annotations.zip</a><br><br>
 <a href="https://drive.google.com/file/d/1G54vsOdxWY1hG7dzmkeK3r0xz9s-heyQ/view?usp=sharing">MoNuSAC Testing Data and Annotations.zip</a><br><br>
@@ -69,8 +69,8 @@ Training and Testing dataset contains many svs and tif image files, and xml annt
  
 Please run the following command for Python script <a href="./ImageMaskDatasetGenerator.py">ImageMaskDatasetGenerator.py</a><br>
 <pre>
-python ImageMaskDatasetGenerator,py True
-</pre> 
+>python ImageMaskDatasetGenerator,py True
+</pre>.
 This command generate <b>PreAugmented-MoNuSAC-master</b> from tif and xml files in MoNuSAC_images_and_annotation dataset,
 and <b>MoNuSAC-mini-test</b>
 from MoNuSAC Testing Data and Annotations.<br>
