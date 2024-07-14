@@ -3,7 +3,7 @@ This is 512x512 JPEG PreAugmented MoNuSAC 2020 ImageMaskDatatset for Imae Segmen
 
 The original dataset used here has been take from the following web-site.<br>
 
-<a href="https://monusac-2020.grand-challenge.org/Data/"
+<a href="https://monusac-2020.grand-challenge.org/Data/">
 Challenges<br>
 MoNuSAC 2020<br>
 <br>
