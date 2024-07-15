@@ -164,9 +164,12 @@ class ImageMaskDatasetGenerator:
           continue
 
         print("image shape {}".format(image.shape))
-        h, w, c = image.shape
 
-        mask = np.zeros((h, w, 3))
+        h, w, c = image.shape
+        # 2024/07/15 
+        mask   = np.zeros((h, w, 1))
+        if self.colormap !=None:
+          mask = np.zeros((h, w, 3))
 
         image_filepath = os.path.join(self.output_images_dir, image_name)
         if self.square_resize:
@@ -198,7 +201,10 @@ class ImageMaskDatasetGenerator:
             attribute    = attributes.get("Attribute")
             name         = attribute.get("Name")
             print("---name {}".format(name))
-            bgr_color = self.colormap.get(name)
+            # 2024/07/15
+            bgr_color   = (255)
+            if self.colormap:
+              bgr_color = self.colormap.get(name)
             print("--- color {}".format(bgr_color))
         
             regions  = annotation["Regions"].get("Region")
@@ -220,6 +226,9 @@ class ImageMaskDatasetGenerator:
           mask_filepath = os.path.join(self.output_masks_dir,  mask_file)
           if self.square_resize:
             mask = self.resize_to_512x512(mask, ismask=True)
+          ##if self.colormap == None:
+          #  mask = cv2.cvtColor(mask, cv2.COLOR_BGR2GRAY)
+
           cv2.imwrite(mask_filepath, mask)
           print("=== Saved {}".format(mask_filepath))
           
@@ -489,22 +498,31 @@ if __name__ == "__main__":
       # Save them as JPEG files
       
       input_dir  = "./MoNuSAC_images_and_annotation/*/"
-
+            
       output_dir     = "./MoNuSAC-master"
       augmentation = False
-  
-      if len(sys.argv) == 2:
-         
+      use_colormap = True
+      if len(sys.argv) >= 2:   
          augmentation = eval(sys.argv[1])
          if augmentation:
            output_dir = "./PreAugmented-MoNuSAC-master"
            input("--- Enabled augmentation ")
+      if len(sys.argv) == 3:
+        use_colormap = eval(sys.argv[2])
+        if use_colormap == False:
+           input("--- Disabled colormap ")
+           output_dir = "./PreAugmented-MoNuSAC-master-White-Mask"
+
       debug = False
+    
       colormap = {'Macrophage':(255, 0, 0), 
                   'Epithelial':(0, 255, 0), 
                   'Neutrophil':(0, 0, 255), 
                   'Lymphocyte':(0, 255, 255)}
-
+        
+      if use_colormap == False:
+         colormap = None
+      
       generator = ImageMaskDatasetGenerator(input_dir, 
                                            output_dir,
                                            colormap,
@@ -512,7 +530,6 @@ if __name__ == "__main__":
                                            augmentation=augmentation,
                                            debug = debug)
       generator.generate()
-      
 
       # 2 Create image-mask dataset for testing
       # Save them as JPEG files
@@ -522,6 +539,9 @@ if __name__ == "__main__":
       output_dir = "./MoNuSAC-mini-test"
 
       augmentation = False
+      if use_colormap == False:
+        output_dir = "./MoNuSAC-mini-test-White-Mask"
+
       debug = False
       generator = ImageMaskDatasetGenerator(input_dir, 
                                            output_dir,

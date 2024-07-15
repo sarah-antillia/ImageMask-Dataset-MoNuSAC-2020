@@ -1,4 +1,7 @@
-<h2>ImageMask-Dataset-MoNuSAC-2020</h3>
+<h2>ImageMask-Dataset-MoNuSAC-2020 (Updated: 2024/0715) </h3>
+<li>2024/07/15 Updated ImageMakeDatasetGenerator to be able to create binary white mask files.</li>
+<li>2024/07/15 Uploaded PreAugmented-ImageMask-Dataset-V2 (White Masks).</li> 
+<br>
 This is 512x512 JPEG PreAugmented MoNuSAC 2020 ImageMaskDatatset for Imae Segmentation.<br>
 
 The original dataset used here has been take from the following web-site.<br>
@@ -6,10 +9,18 @@ The original dataset used here has been take from the following web-site.<br>
 <a href="https://monusac-2020.grand-challenge.org/Data/">Challenges MoNuSAC 2020 Data</a>
 <br>
 <br>
-<b>Download PreAugmented-MoNuSAC-Imag</b><br>
-You can down load our dataset created here from the google drive 
-<a href="https://drive.google.com/file/d/1sMmUW6Gqm9hBNdmIHJ60qhgj14n_TPZg/view?usp=sharing">PreAugmented-MoNuSAC-ImageMask-Dataset-V1.zip</a>.<br>
+<b>Download PreAugmented-MoNuSAC-ImageMaskDataset</b><br>
+You can download our datasets created here from the google drive.<br>
+<li>
+<a href="https://drive.google.com/file/d/1sMmUW6Gqm9hBNdmIHJ60qhgj14n_TPZg/view?usp=sharing">
+PreAugmented-MoNuSAC-ImageMask-Dataset-V1.zip (Colorized-Mask)</a>
+</li>
+<li>
+<a href="https://drive.google.com/file/d/1YmhDmq_JLZKAp62uBUwXhDBTx0cVncQO/view?usp=sharing">
+PreAugmented-MoNuSAC-ImageMask-Dataset-V2.zip (White-Mask)</a>
+</li>
 
+<br>
 <h3>1. Dataset Citatioin</h3>
 The orginal dataset use here has been taken
 <a href="https://monusac-2020.grand-challenge.org/Data/"
@@ -102,7 +113,7 @@ colormap = {'Macrophage':(255, 0, 0),
 <br>
 <br>
 <h3>4. Split master </h3>
-Please run the following command for Python script <a href="./split_master.py">split_mastr</a>.<br>
+Please run the following command for Python script <a href="./split_master.py">split_master.py</a>.<br>
 
 <pre>
 >python split_master.py
@@ -141,6 +152,67 @@ This command generates PreAugmented-MoNuSAC-ImageMask-Dataset-V1 dataset.<br>
 <br>
 <b>MoNuSAC-mini-test masks sample</b><br>
 <img src="./asset/mini-test_masks_sample.png" width="1024" height="auto"><br>
+
+<hr>
+
+
+<h3>5. Generate ImageMask master White Mask</h3>
+ 
+Please run the following command for Python script <a href="./ImageMaskDatasetGenerator.py">ImageMaskDatasetGenerator.py</a><br>
+<pre>
+>python ImageMaskDatasetGenerator,py True False
+</pre>.
+This command generate <b>PreAugmented-MoNuSAC-master-White-Mask</b> from tif and xml files in MoNuSAC_images_and_annotation dataset,
+and <b>MoNuSAC-mini-test</b>
+from MoNuSAC Testing Data and Annotations.<br>
+
+This script generates 512x512 resized JPEG image and black white mask files by using some offline augmentation methods in the script 
+from the training dataset, and non-resized image and black white mask files from the testing dataset.
+<pre>
+./PreAugmented-MoNuSAC-master-White-Mask
+├─images
+└─masks
+</pre>
+<pre>
+./MoNuSAC-mini-test-White-Mask
+├─images
+└─masks
+</pre>
+<br>
+<h3>6. Split master </h3>
+Please run the following command for Python script <a href="./split_master_v2.py">split_master_v2.py</a>.<br>
+
+<pre>
+>python split_master_v2.py
+</pre>
+<hr>
+This command generates PreAugmented-MoNuSAC-ImageMask-Dataset-V1 dataset.<br>
+<pre>
+./ PreAugmented-MoNuSAC-ImageMask-Dataset-V2
+├─test
+│  ├─images
+│  └─masks
+├─train
+│  ├─images
+│  └─masks
+└─valid
+    ├─images
+    └─masks
+</pre>
+<hr>
+<b>Train images sample V2</b><br>
+<img src="./asset/train_images_sample_v2.png" width="1024" height="auto"><br>
+<br>
+<b>Train masks sample V2</b><br>
+<img src="./asset/train_masks_sample_v2.png" width="1024" height="auto"><br>
+
+<hr>
+
+<b>MoNuSAC-mini-test-White-Mask images sample</b><br>
+<img src="./asset/mini-test_images_sample_v2.png" width="1024" height="auto"><br>
+<br>
+<b>MoNuSAC-mini-test-White-Mask masks sample</b><br>
+<img src="./asset/mini-test_masks_sample_v2.png" width="1024" height="auto"><br>
 
 <hr>
 
