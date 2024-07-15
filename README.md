@@ -78,7 +78,7 @@ Training and Testing dataset contains many svs and tif image files, and xml annt
  
 Please run the following command for Python script <a href="./ImageMaskDatasetGenerator.py">ImageMaskDatasetGenerator.py</a><br>
 <pre>
->python ImageMaskDatasetGenerator,py True
+>python ImageMaskDatasetGenerator.py True
 </pre>.
 This command generate <b>PreAugmented-MoNuSAC-master</b> from tif and xml files in MoNuSAC_images_and_annotation dataset,
 and <b>MoNuSAC-mini-test</b>
@@ -160,7 +160,7 @@ This command generates PreAugmented-MoNuSAC-ImageMask-Dataset-V1 dataset.<br>
  
 Please run the following command for Python script <a href="./ImageMaskDatasetGenerator.py">ImageMaskDatasetGenerator.py</a><br>
 <pre>
->python ImageMaskDatasetGenerator,py True False
+>python ImageMaskDatasetGenerator.py True False
 </pre>.
 This command generate <b>PreAugmented-MoNuSAC-master-White-Mask</b> from tif and xml files in MoNuSAC_images_and_annotation dataset,
 and <b>MoNuSAC-mini-test</b>
